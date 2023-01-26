@@ -6,11 +6,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { register } from "../helper/apiCall";
 import convertToBase64 from "../helper/convertImage";
-import { UserContext } from "../context/userContext";
-import Loading from "../components/Loading";
 
 function Register() {
-  const { isLoading, setLoading } = useContext(UserContext);
   const [userDetails, setUserDetails] = useState({
     username: "",
     email: "",
@@ -40,20 +37,21 @@ function Register() {
     } else if (password !== confPass) {
       return toast.error("Passwords do not match");
     }
-    setLoading(true);
-    const data = await register({ username, email, password, profile });
-    setLoading(false);
-    if (data.error) {
-      return toast.error("Unable to register user");
-    }
-    toast.success(data);
+    const data = await toast.promise(
+      register({ username, email, password, profile }),
+      {
+        pending: "Registering user...",
+        success: "User registered successfully",
+        error: "Unable to register user",
+        loading: "Registering user...",
+      }
+    );
     return navigate("/login");
   };
 
   return (
     <section className="login-section">
       <div className="login-container">
-        {isLoading && <Loading />}
         <Heading text={"register"} />
         <form onSubmit={registerHandle}>
           <div className="mb-3">

@@ -76,7 +76,7 @@ function SingleNote({
               type="text"
               className="form-control"
               id="exampleFormControlInput2"
-              placeholder="Enter content"
+              placeholder="Enter content in markdown"
               name="content"
               value={content}
               onChange={(e) => {

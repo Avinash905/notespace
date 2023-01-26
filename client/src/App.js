@@ -19,6 +19,10 @@ function App() {
       <Navbar />
       <Toaster
         toastOptions={{
+          className: "",
+          style: {
+            color: "#303030",
+          },
           success: {
             style: {
               color: "green",
