@@ -5,6 +5,9 @@ import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router-dom";
 import { setNote, editNote } from "../helper/apiCall";
 import { toast } from "react-hot-toast";
+import { UserContext } from "../context/userContext";
+import { useContext } from "react";
+import Loading from "../components/Loading";
 
 function SingleNote({
   titleText,
@@ -19,17 +22,22 @@ function SingleNote({
   const [content, setContent] = useState(defContent);
   const [category, setCategory] = useState(defCategory);
   const navigate = useNavigate();
+  const { isLoading, setLoading } = useContext(UserContext);
 
   const noteHandle = async (e) => {
     e.preventDefault();
     if (type === "create") {
+      setLoading(true);
       const data = await setNote({ title, content, category });
+      setLoading(false);
       if (!data) {
         return toast.error("Unable to create note");
       }
       toast.success(data);
     } else {
+      setLoading(true);
       const data = await editNote({ id, title, content, category });
+      setLoading(false);
       if (!data) {
         return toast.error("Unable to create note");
       }
@@ -41,6 +49,7 @@ function SingleNote({
   return (
     <section className="edit-section">
       <div className="allnotes-container">
+        {isLoading && <Loading />}
         <Heading text={titleText} />
         <form onSubmit={noteHandle}>
           <div className="mb-3">

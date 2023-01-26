@@ -7,12 +7,13 @@ import { login } from "../helper/apiCall";
 import toast from "react-hot-toast";
 import { UserContext } from "../context/userContext";
 import { useContext } from "react";
+import Loading from "../components/Loading";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { setUserInfo } = useContext(UserContext);
+  const { setUserInfo, isLoading, setLoading } = useContext(UserContext);
 
   const loginHandle = async (e) => {
     e.preventDefault();
@@ -21,10 +22,12 @@ function Login() {
     } else if (!password) {
       return toast.error("Password is required");
     }
+    setLoading(true);
     const { msg, token, username, userEmail, profile } = await login({
       email,
       password,
     });
+    setLoading(false);
     if (!msg) {
       return toast.error("Invalid credentials");
     }
@@ -37,6 +40,7 @@ function Login() {
   return (
     <section className="login-section">
       <div className="login-container">
+        {isLoading && <Loading />}
         <Heading text={"login"} />
         <form onSubmit={loginHandle}>
           <div className="mb-3">

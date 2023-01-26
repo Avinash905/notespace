@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
 import "../styles/login.css";
@@ -6,8 +6,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { register } from "../helper/apiCall";
 import convertToBase64 from "../helper/convertImage";
+import { UserContext } from "../context/userContext";
+import Loading from "../components/Loading";
 
 function Register() {
+  const { isLoading, setLoading } = useContext(UserContext);
   const [userDetails, setUserDetails] = useState({
     username: "",
     email: "",
@@ -37,7 +40,9 @@ function Register() {
     } else if (password !== confPass) {
       return toast.error("Passwords do not match");
     }
+    setLoading(true);
     const data = await register({ username, email, password, profile });
+    setLoading(false);
     if (data.error) {
       return toast.error("Unable to register user");
     }
@@ -48,6 +53,7 @@ function Register() {
   return (
     <section className="login-section">
       <div className="login-container">
+        {isLoading && <Loading />}
         <Heading text={"register"} />
         <form onSubmit={registerHandle}>
           <div className="mb-3">
