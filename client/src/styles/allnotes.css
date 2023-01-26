@@ -1,0 +1,16 @@
+@import url(App.css);
+
+.allnotes-section {
+  height: 87vh;
+  background-color: rgb(255, 253, 250);
+}
+
+.allnotes-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.edit-section {
+  height: 85vh;
+  background-color: rgb(255, 253, 250);
+}

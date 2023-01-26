@@ -1,0 +1,47 @@
+@import url(App.css);
+
+.login-section {
+  height: 87vh;
+  background-color: rgb(255, 253, 250);
+}
+
+.login-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container > form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.already-account {
+  margin: 1.5rem;
+  width: 30%;
+}
+
+.already-account > a {
+  color: rgb(0, 132, 255);
+}
+
+.already-account > a:hover {
+  color: rgb(0, 132, 255) !important;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profile-container > form {
+  width: 50%;
+}
+
+.profile-pic-cont > img {
+  width: 70%;
+}

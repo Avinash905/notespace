@@ -1,0 +1,39 @@
+@import url(App.css);
+
+.accordion {
+  margin: 2rem auto;
+}
+
+.accordion-button {
+  border: 1px solid #b3b7bb !important ;
+  background-color: rgb(210 196 168) !important;
+  color: black !important;
+  box-shadow: none !important;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-button:after {
+  content: none;
+}
+
+.edit-del-btn {
+  display: flex;
+  gap: 2rem;
+}
+
+.badge {
+  font-size: 1rem;
+  color: white;
+  background-color: rgb(34, 162, 12);
+}
+
+.accordion-text {
+  margin: 0.5rem auto;
+  font-size: 1rem;
+}
+
+.blockquote-footer {
+  margin: 1rem;
+}

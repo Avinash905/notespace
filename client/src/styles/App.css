@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900;1000&family=Poppins:wght@300;500;700;900&family=Quicksand:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@400;500;700;900&family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: #303030;
+  height: 2.5rem;
+  color: white;
+  text-align: center;
+}
+
+.button {
+  color: white;
+  background-color: #303030;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: 1px solid #303030;
+}
+
+.button:hover {
+  color: #303030;
+  background-color: white;
+}
+
+input,
+textarea {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: 1px solid #b3b7bb !important;
+}
+
+input:focus {
+  border: 1px solid #b3b7bb !important;
+}
+
+.heading-cont {
+  margin: 1rem;
+  width: 100%;
+}
+
+.heading-cont > h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}

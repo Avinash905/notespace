@@ -1,0 +1,17 @@
+@import url(App.css);
+
+nav {
+  background-color: rgb(210 196 168);
+}
+
+.navbar {
+  display: flex;
+}
+
+.nav-name {
+  font-weight: 700;
+}
+
+.dropdown-menu a:hover {
+  color: #303030 !important;
+}

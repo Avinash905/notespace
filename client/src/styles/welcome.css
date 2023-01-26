@@ -1,0 +1,30 @@
+.welcome-section {
+  background-image: url("https://images.pexels.com/photos/317356/pexels-photo-317356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 87vh;
+}
+
+.welcome-cont {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.welcome-heading {
+  font-size: 5rem;
+  font-weight: 500;
+  margin: 2rem;
+}
+
+.welcome-text {
+  font-size: 1.8rem;
+}
+
+.welcome-btn-cont {
+  margin: 2rem;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
