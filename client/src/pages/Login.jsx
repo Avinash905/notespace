@@ -31,6 +31,7 @@ function Login() {
         pending: "Logging in...",
         success: "Login successful",
         error: "Invalid credentials",
+        loading: "Logging in...",
       }
     );
 

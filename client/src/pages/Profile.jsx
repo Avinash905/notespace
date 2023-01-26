@@ -36,11 +36,16 @@ function Profile() {
     if (password !== confPass) {
       return toast.error("Passwords do not match");
     }
-    const data = await updateProfile({ username, email, password, profile });
-    if (data.error) {
-      return toast.error("Unable to update user");
-    }
-    return toast.success(data);
+
+    const data = await toast.promise(
+      updateProfile({ username, email, password, profile }),
+      {
+        pending: "Updating profile...",
+        success: "Profile updated successfully",
+        error: "Unable to update profile",
+        loading: "Updating profile...",
+      }
+    );
   };
 
   return (
