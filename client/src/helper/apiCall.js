@@ -112,7 +112,6 @@ export async function deleteNote(id) {
     const { data } = await axios.delete(`/notes/deletenote/${id}`, {
       headers: { authorization: `Bearer ${token}` },
     });
-    console.log("delete data", data);
     return data;
   } catch (error) {
     return { error };
